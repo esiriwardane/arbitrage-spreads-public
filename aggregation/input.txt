@@ -1,0 +1,32 @@
+# Each line of instruction in this `inputs.txt` file should contain a destination and source delimited by a `|`.
+# Lines beginning with # are ignored.
+# 
+# For example, suppose your `inputs.txt` file contains the following lines of text:
+# > destination | source
+#
+# Now suppose you run the following line of code:
+# > link_inputs(paths, ['inputs.txt'])
+# 
+# This will create a link in `paths['input_dir']` named `destination` that links to `source`.
+# 
+# Alternative, suppose you run the following line of code:
+# > copy_inputs(paths, ['inputs.txt'])
+# 
+# This will create a file in `paths['input_dir']` named `destination` that is a copy of `source`.
+
+# Destination | Source
+lib           | {root}/lib
+USD_OIS_Rates.dta           	| {root}/reference_rates/output/USD_OIS_Rates.dta
+USD_LIBOR_Rates.dta           	| {root}/reference_rates/output/USD_LIBOR_Rates.dta
+Treasury_Yields.dta           	| {root}/reference_rates/output/Treasury_Yields.dta
+box_spreads.dta           		| {root}/box/output/box_spreads.dta
+cds_bond_implied_rf.dta         | {root}/cds-bond/output/cds_bond_implied_rf.dta
+cip_implied_rf.dta           	| {root}/cip/output/cip_implied_rf.dta
+equity_sf_implied_rf.dta        | {root}/equity-sf/output/equity_sf_implied_rf.dta
+# TIPS_T_Basis.dta           		| {root}/tips-treasury/output/TIPS_T_Basis.dta
+treasury_sf_implied_rf.dta      | {root}/treasury-sf/output/treasury_sf_implied_rf.dta
+tswap_implied_rf.dta           	| {root}/treasury-swap/output/tswap_implied_rf.dta
+tips_treasury_implied_rf.dta 	| {root}/tips-treasury/output/tips_treasury_implied_rf.dta
+
+
+

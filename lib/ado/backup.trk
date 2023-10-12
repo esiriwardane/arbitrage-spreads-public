@@ -1,0 +1,1119 @@
+* 00000049
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://fmwww.bc.edu/repec/bocode/r
+N reghdfe.pkg
+D 24 Jul 2021
+U 1
+d 'REGHDFE': module to perform linear or instrumental-variable regression absorbing any number of high-dimensional fixed effects
+d 
+d  reghdfe fits a linear or instrumental-variable regression
+d absorbing an arbitrary number of categorical factors and
+d factorial interactions Optionally, it saves the estimated fixed
+d effects.
+d 
+d KW: regression
+d KW: instrumental variables
+d KW: fixed effects
+d KW: high dimension fixed effects
+d 
+d Requires: Stata version 11.2
+d 
+d Distribution-Date: 20191118
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f r/reghdfe.ado
+f r/reghdfe.mata
+f r/reghdfe_old.ado
+f r/reghdfe_p.ado
+f r/reghdfe_old_p.ado
+f r/reghdfe_estat.ado
+f r/reghdfe_parse.ado
+f r/reghdfe_footnote.ado
+f r/reghdfe_old_estat.ado
+f r/reghdfe_old_footnote.ado
+f e/estfe.ado
+f r/reghdfe_header.ado
+f r/reghdfe_store_alphas.ado
+f r/reghdfe.sthlp
+f r/reghdfe_old.sthlp
+f r/reghdfe_accelerations.mata
+f r/reghdfe_bipartite.mata
+f r/reghdfe_class.mata
+f r/reghdfe_common.mata
+f r/reghdfe_constructor.mata
+f r/reghdfe_lsmr.mata
+f r/reghdfe_projections.mata
+f r/reghdfe_transforms.mata
+f r/reghdfe_mata.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N ftools.pkg
+D 24 Jul 2021
+U 2
+d 'FTOOLS': module to provide alternatives to common Stata commands optimized for large datasets
+d 
+d  ftools consists of a Mata file and several Stata commands: The
+d Mata file creates identifiers (factors) from variables by using
+d hash functions instead of sorting the data, so it runs in time
+d O(N) and not in O(N log N). The Stata commands exploit this to
+d avoid sort operations,  at the cost of being slower for small
+d datasets (mainly because of the cost involved in moving data from
+d Stata to Mata). Implemented commands are fcollapse, fegen group,
+d and fsort. Note that most of the capabilities of levels and
+d contract are already supported by these commands. Possible
+d commands include more egen functions and merge and reshape
+d alternatives.
+d 
+d KW: levels
+d KW: collapse
+d KW: contract
+d KW: egen
+d KW: sort
+d KW: factor variables
+d KW: Mata
+d 
+d Requires: Stata version 11.2
+d 
+d Distribution-Date: 20191118
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f f/ftools.ado
+f f/ftools.mata
+f f/ftools.sthlp
+f f/fcollapse.ado
+f f/fcollapse.sthlp
+f f/fegen.ado
+f f/fegen_group.ado
+f f/fegen.sthlp
+f f/fisid.ado
+f f/fisid.sthlp
+f f/flevelsof.ado
+f f/flevelsof.sthlp
+f f/fmerge.ado
+f f/fmerge.sthlp
+f f/freshape.ado
+f f/fsort.ado
+f f/fsort.sthlp
+f f/ftab.ado
+f j/join.ado
+f j/join.sthlp
+f l/local_inlist.ado
+f l/local_inlist.sthlp
+f f/fcollapse_functions.mata
+f f/fcollapse_main.mata
+f f/ftools_type_aliases.mata
+f f/ftools.mata
+f f/ftools_common.mata
+f f/ftools_hash1.mata
+f f/ftools_main.mata
+f f/ftools_experimental.mata
+f f/ftools_plugin.mata
+f f/ftools_type_aliases.mata
+f m/ms_compile_mata.ado
+f m/ms_expand_varlist.ado
+f m/ms_fvstrip.ado
+f m/ms_fvstrip.sthlp
+f m/ms_fvunab.ado
+f m/ms_get_version.ado
+f m/ms_parse_absvars.ado
+f m/ms_parse_varlist.ado
+f m/ms_parse_vce.ado
+f m/ms_add_comma.ado
+e
+S http://fmwww.bc.edu/repec/bocode/i
+N ivreghdfe.pkg
+D 24 Jul 2021
+U 3
+d 'IVREGHDFE': module for extended instrumental variable regressions with multiple levels of fixed effects
+d 
+d   ivreghdfe is essentially ivreg2 with an additional absorb()
+d option from reghdfe.
+d 
+d KW: regression
+d KW: instrumental variables
+d KW: fixed effects
+d KW: high dimension fixed effects
+d 
+d Requires: Stata version 11.2, reghdfe, ivreg2 and ranktest from SSC (q.v.)
+d 
+d Distribution-Date: 20180915
+d 
+d Author: Sergio Correia, Duke University
+d Support: email sergio.correia@@duke.edu
+d 
+f i/ivreghdfe.ado
+f i/ivreghdfe.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/g
+N grstyle.pkg
+D 24 Jul 2021
+U 4
+d 'GRSTYLE': module to customize the overall look of graphs
+d 
+d  grstyle allows you to customize the overall look of graphs from
+d within a do-file without having to fiddle around with external
+d scheme files. The advantage of grstyle over manually editing a
+d scheme file is that everything needed to reproduce your graphs
+d can be included in a single do-file.
+d 
+d KW: graphics
+d KW: scheme files
+d KW: custom graphics
+d KW: plot
+d 
+d Requires: Stata version 9.2 and palettes from SSC (q.v.)
+d 
+d Distribution-Date: 20200919
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f g/grstyle.ado
+f g/grstyle.hlp
+f g/grstyle_set.ado
+f g/grstyle_set.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N palettes.pkg
+D 24 Jul 2021
+U 5
+d 'PALETTES': module to provide color palettes, symbol palettes, and line pattern palettes
+d 
+d  The palettes module contains three commands: colorpalette,
+d symbolpalette, and linepalette. The commands provide color,
+d symbol, and line pattern palettes for use in Stata graphs.
+d 
+d KW: graphics
+d KW: colors
+d KW: marker symbols
+d KW: line patterns
+d 
+d Requires: Stata version 14.2 and colrspace from SSC (q.v.); (version 9.2 for colorpalette9)
+d 
+d Distribution-Date: 20200527
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f p/palettes.hlp
+f c/colorpalette.ado
+f c/colorpalette.sthlp
+f c/colorpalette9.ado
+f c/colorpalette9.hlp
+f l/linepalette.ado
+f l/linepalette.hlp
+f s/symbolpalette.ado
+f s/symbolpalette.hlp
+f l/lcolrspace.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N colrspace.pkg
+D 24 Jul 2021
+U 6
+d 'COLRSPACE': module providing a class-based color management system in Mata
+d 
+d   The colrspace module provides a class-based color management
+d system implemented in Mata. It supports a wide variety of color
+d spaces and translations among them, provides color generators and
+d a large collection of named palettes, and features functionality
+d such as color interpolation, grayscale conversion, or color
+d vision deficiency simulation.
+d 
+d KW: graphics
+d KW: color management
+d 
+d Requires: Stata version 14.2
+d 
+d Distribution-Date: 20200606
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f c/colrspace.sthlp
+f c/colrspace_source.sthlp
+f c/colrspace_library_generators.sthlp
+f c/colrspace_library_matplotlib.sthlp
+f c/colrspace_library_namedcolors.sthlp
+f c/colrspace_library_palettes.sthlp
+f l/lcolrspace.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/g
+N gtools.pkg
+D 24 Jul 2021
+U 7
+d 'GTOOLS': module to provide a fast implementation of common group commands
+d 
+d    gtools is a Stata package that provides a fast implementation
+d of common group commands like    collapse, egen, isid, levelsof,
+d contract, distinct, and so on using C plugins for a massive
+d speed improvement.
+d 
+d KW:  data management
+d KW: collapse
+d KW: egen
+d KW: isid
+d KW: levelsof
+d KW: contract
+d KW: distinct
+d KW: plugins
+d KW: hash
+d 
+d Requires: Stata version 13.1
+d 
+d Distribution-Date: 20190403
+d 
+d Author: Mauricio Caceres Bravo
+d Support: email mauricio.caceres.bravo@@gmail.com
+d 
+f g/gtools.ado
+f g/gtools.sthlp
+f _/_gtools_internal.ado
+f _/_gtools_internal.mata
+f f/fasterxtile.ado
+f f/fasterxtile.sthlp
+f g/gcollapse.ado
+f g/gcollapse.sthlp
+f g/gcontract.ado
+f g/gcontract.sthlp
+f g/gdistinct.ado
+f g/gdistinct.sthlp
+f g/gduplicates.ado
+f g/gduplicates.sthlp
+f g/gegen.ado
+f g/gegen.sthlp
+f g/gisid.ado
+f g/gisid.sthlp
+f g/glevelsof.ado
+f g/glevelsof.sthlp
+f g/gquantiles.ado
+f g/gquantiles.sthlp
+f g/greshape.ado
+f g/greshape.sthlp
+f g/gstats.ado
+f g/gstats.sthlp
+f g/gstats_sum.sthlp
+f g/gstats_summarize.sthlp
+f g/gstats_tab.sthlp
+f g/gstats_winsor.sthlp
+f g/gtools_macosx_v2.plugin
+f g/gtools_macosx_v3.plugin
+f g/gtools_unix_v2.plugin
+f g/gtools_unix_v3.plugin
+f g/gtools_windows_v2.plugin
+f g/gtools_windows_v3.plugin
+f g/gtop.ado
+f g/gtop.sthlp
+f g/gtoplevelsof.ado
+f g/gtoplevelsof.sthlp
+f g/gunique.ado
+f g/gunique.sthlp
+f h/hashsort.ado
+f h/hashsort.sthlp
+f l/lgtools.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/e
+N egenmore.pkg
+D 24 Jul 2021
+U 8
+d 'EGENMORE': modules to extend the generate function
+d 
+d  This package includes various -egen- functions. For full
+d details, please read the help file (ssc type egenmore.sthlp).
+d Some of these routines are updates of those published in STB-50.
+d _gfilter, _ggroup2, _gegroup and _gcorr require Stata 7.
+d _gminutes, _grepeat and _gseconds require Stata 8.  _gcorr and
+d _gnoccur were written by Nick Winter
+d (nwinter@policystudies.com). _grsum2 was written by Steven
+d Stillman (s.stillman@verizon.net). _gdhms, _gelap, _gelap2,
+d _ghms, _gtod and _gtruncdig were written by Kit Baum
+d (baum@bc.edu).
+d 
+d KW: egen
+d KW: grouping
+d KW: graphing
+d KW: strings
+d KW: dates
+d KW: first
+d KW: last
+d KW: random
+d KW: row
+d 
+d Requires: Stata version 6.0 (7.0 for _gfilter7, _ggroup2, _gegroup, _gsieve, _gnoccur; 8.2 for _gcorr, _grepeat, _gminutes, _gseconds, _gfilter, _gaxis, _gdensity, _gxtile, _gtotal0, _gmixnorm, _gw
+d 
+d 
+d Author: Nicholas J. Cox, University of Durham
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 20190124
+d 
+f e/egenmore.sthlp
+f _/_gclsst.ado
+f _/_gnmiss.ado
+f _/_ggmean.ado
+f _/_ghmean.ado
+f _/_grall.ado
+f _/_grany.ado
+f _/_grcount.ado
+f _/_grndsub.ado
+f _/_grndint.ado
+f _/_gfilter.ado
+f _/_gifirst.ado
+f _/_gilast.ado
+f _/_gncyear.ado
+f _/_ghmm.ado
+f _/_ghmmss.ado
+f _/_gincss.ado
+f _/_gfirst.ado
+f _/_glastnm.ado
+f _/_gnss.ado
+f _/_gbom.ado
+f _/_gbomd.ado
+f _/_geom.ado
+f _/_geomd.ado
+f _/_gnwords.ado
+f _/_gwordof.ado
+f _/_gnvals.ado
+f _/_gridit.ado
+f _/_gsemean.ado
+f _/_gmsub.ado
+f _/_gston.ado
+f _/_gntos.ado
+f _/_gewma.ado
+f _/_grecord.ado
+f _/_gbase.ado
+f _/_gdecimal.ado
+f _/_ggroup2.ado
+f _/_gsumoth.ado
+f _/_gegroup.ado
+f _/_gcorr.ado
+f _/_grsum2.ado
+f _/_gsieve.ado
+f _/_gdhms.ado
+f _/_ghms.ado
+f _/_gtod.ado
+f _/_gelap.ado
+f _/_gelap2.ado
+f _/_gnoccur.ado
+f _/_gwtfreq.ado
+f _/_gvar.ado
+f _/_gminutes.ado
+f _/_gseconds.ado
+f _/_grepeat.ado
+f _/_gaxis.ado
+f _/_gdensity.ado
+f _/_gxtile.ado
+f _/_gtotal0.ado
+f _/_gmixnorm.ado
+f _/_gadjl.ado
+f _/_gadju.ado
+f _/_gdayofyear.ado
+f _/_gfoy.ado
+f _/_goutside.ado
+f _/_gmlabvpos.ado
+f _/_giso3166.ado
+f _/_growmedian.ado
+f _/_gwpctile.ado
+f _/_gd2.ado
+f _/_grownvals.ado
+f _/_growsvals.ado
+f _/_gtruncdig.ado
+e
+S http://fmwww.bc.edu/repec/bocode/a
+N asgen.pkg
+D 24 Jul 2021
+U 9
+d 'ASGEN': module to generate weighted average mean using an existing variable as weight
+d 
+d    asgen creates a new variable from an existing variable or an
+d expression. The new variable contains    weighted average mean.
+d The existing variable is supplied to asgen by the =exp.  The
+d weights are based    on the values of an existing numeric
+d variable, that is specified in the weight(varname) option.
+d 
+d KW: data management
+d KW: egen
+d KW: weighted average
+d KW: mean
+d 
+d Requires: Stata version 11
+d 
+d Distribution-Date: 20200801
+d 
+d Author: Attaullah Shah, Institute of Management Sciences
+d Support: email attashah15@@hotmail.com
+d 
+f a/asgen.ado
+f a/asgen.sthlp
+f l/lasgen.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/t
+N tsegen.pkg
+D 24 Jul 2021
+U 10
+d 'TSEGEN': module to call an egen function using a time-series varlist
+d 
+d  With -tsegen-, you can invoke any -egen- function that requires
+d a varlist using a time-series varlist (tsvarlist) instead.
+d -tsegen- converts the tsvarlist to a varlist by substituting
+d equivalent temporary variables as necessary and then invokes the
+d specified egen function.
+d 
+d KW: egen
+d KW: time-series operators
+d KW: rolling window
+d KW: moving window
+d KW: smoothing
+d 
+d Requires: Stata version 10
+d 
+d Distribution-Date: 20150603
+d 
+d Author: Robert Picard, Durham University
+d Support: email picard@@netbox.com
+d 
+d Author: Nicholas J. Cox
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f t/tsegen.ado
+f t/tsegen.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/e
+N estout.pkg
+D 24 Jul 2021
+U 11
+d 'ESTOUT': module to make regression tables
+d 
+d  estout produces a table of regression results from one or
+d several models for use with spreadsheets, LaTeX, HTML, or a
+d word-processor table. eststo stores a quick copy of the active
+d estimation results for later tabulation. esttab is a wrapper for
+d estout. It displays a pretty looking publication-style regression
+d table without much typing. estadd adds additional results to the
+d e()-returns for one or several models previously fitted and
+d stored. This package subsumes the previously circulated esto,
+d esta, estadd,  and estadd_plus. An earlier version of estout is
+d available  as estout1.
+d 
+d KW: estimates
+d KW: LaTeX
+d KW: HTML
+d KW: word processor
+d KW: output
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20210523
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f _/_eststo.ado
+f _/_eststo.hlp
+f e/estadd.ado
+f e/estadd.hlp
+f e/estout.ado
+f e/estout.hlp
+f e/eststo.ado
+f e/eststo.hlp
+f e/estpost.ado
+f e/estpost.hlp
+f e/esttab.ado
+f e/esttab.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/l
+N labutil.pkg
+D 24 Jul 2021
+U 12
+d 'LABUTIL': modules for managing value and variable labels
+d 
+d labcopy copies value labels, or swaps them around. labdel deletes
+d  them.  lablog defines value labels for values which are base 10
+d logarithms containing the antilogged values. labcd defines value
+d labels in which decimal points and commas are  interchanged
+d compared with the Stata default. labdtch detaches value labels.
+d labmap maps numeric  values to numeric labels. labnoeq removes
+d text up to and including "==" from variable labels. labvalch
+d supersedes labcopy and labdel.   labvarch is a more general tool
+d to change variable labels.  labmask assigns the values (or
+d value labels) of one variable  to another.  These  command-line
+d tools may complement John Gleason's interactive  labedit
+d (STB-51). labvalclone clones a set of value labels under a new
+d label name.  labvalcombine combines two or more sets of value
+d labels. It requires Stata 8.
+d 
+d KW: value labels
+d KW: variable labels
+d KW: data management
+d KW: logarithm
+d 
+d Requires: Stata version 7.0 (version 8 for labvalcombine).
+d 
+d 
+d Author: Nicholas J. Cox, University of Durham
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 20131123
+d 
+f l/labcd.ado
+f l/labcd.hlp
+f l/labcopy.ado
+f l/labcopy.hlp
+f l/labdel.ado
+f l/labdel.hlp
+f l/lablog.ado
+f l/lablog.hlp
+f l/labdtch.ado
+f l/labdtch.hlp
+f l/labmap.ado
+f l/labmap.hlp
+f l/labnoeq.ado
+f l/labnoeq.hlp
+f l/labvarch.ado
+f l/labvarch.hlp
+f l/labvalch.ado
+f l/labvalch.hlp
+f l/labmask.ado
+f l/labmask.hlp
+f l/labvalclone.ado
+f l/labvalclone.sthlp
+f l/labvalcombine.ado
+f l/labvalcombine.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/w
+N winsor2.pkg
+D 24 Jul 2021
+U 13
+d 'WINSOR2': module to winsorize data
+d 
+d    winsor2 can winsorize a varlist, operate with the by prefix,
+d and offers a replace option.
+d 
+d KW: winsor
+d KW: winsorize
+d KW: data management
+d 
+d Requires: Stata version 8
+d 
+d Distribution-Date: 20201125
+d 
+d Author: Yujun Lian, Department of Finance, Sun Yat-Sen University, China
+d Support: email arlionn@@163.com
+d 
+f w/winsor2.ado
+f w/winsor2.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/b
+N binscatter.pkg
+D 24 Jul 2021
+U 14
+d 'BINSCATTER': module to generate binned scatterplots
+d 
+d  binscatter generates binned scatterplots, and is optimized for
+d speed in large  datasets.  Binned scatterplots provide a
+d non-parametric way of visualizing the relationship between two
+d variables.  With a large number of observations, a scatterplot
+d that plots every data point would become too crowded to interpret
+d visually.  binscatter groups the x-axis variable into equal-sized
+d bins, computes the mean of the x-axis and y-axis variables within
+d each bin, then creates a scatterplot of these data points.  It
+d provides built-in options to control for covariates before
+d plotting the relationship.  It will also plot fit lines based on
+d the underlying data, and can automatically handle regression
+d discontinuities.
+d 
+d KW: scatterplot
+d KW: data description
+d KW: regression discontinuity
+d 
+d Requires: Stata version 12.1
+d 
+d Distribution-Date: 20131124
+d 
+d Author: Michael Stepner
+d Support: email michaelstepner@@gmail.com
+d 
+f b/binscatter.ado
+f b/binscatter.sthlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N benchmark.pkg
+D 24 Jul 2021
+U 16
+d gslab_stata: gslab_misc
+d 
+d Author: CJ Verbeck
+d 
+d benchmark: Simulates data and runs analyses that we might expect from a computationally intensive Stata script. Logs output time as I/O, Paralleled, or Serial.
+d 
+f b/benchmark.ado
+f b/benchmark.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N build_recode_template.pkg
+D 24 Jul 2021
+U 17
+d gslab_stata: gslab_misc
+d 
+d 
+d build_recode_template: Creates a new recode CSV file from a using dataset.
+d 
+f b/build_recode_template.ado
+f b/build_recode_template.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N cf_mg.pkg
+D 24 Jul 2021
+U 18
+d gslab_stata: gslab_misc
+d 
+d cf_mg: Like -cf-, but the exit flag is always zero
+d 
+f c/cf_mg.ado
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N checkdta.pkg
+D 24 Jul 2021
+U 19
+d gslab_stata: gslab_misc
+d 
+d Authors: Patrick DeJarnette, Yao Lu, CJ Verbeck, and Nathan Petek
+d 
+d checkdta: Create checkdta.log, which allows users to check whether Stata datasets have actually changed after make.bat is re-run.
+d 
+f c/checkdta.ado
+f c/checkdta.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N cutby.pkg
+D 24 Jul 2021
+U 20
+d gslab_stata: gslab_misc
+d 
+d Author: Matthew Gentzkow
+d 
+d cutby: By-able version of `egen ... = cut()`
+d 
+f c/cutby.ado
+f c/cutby.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N dta_to_txt.pkg
+D 24 Jul 2021
+U 21
+d gslab_stata: gslab_misc
+d 
+d dta_to_txt: Write dta file to text
+d 
+f d/dta_to_txt.ado
+f d/dta_to_txt.sthlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N dummy_missings.pkg
+D 24 Jul 2021
+U 22
+d gslab_stata: gslab_misc
+d 
+d Authors: Patrick DeJarnette and Yao Lu
+d 
+d dummy_missings: Creates dummy variables for missing values and recodes the missing values for a set of variables.
+d 
+f d/dummy_missings.ado
+f d/dummy_missings.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N fillby.pkg
+D 24 Jul 2021
+U 23
+d gslab_stata: gslab_misc
+d 
+d Authors: Matthew Gentzkow and Patrick DeJarnette
+d 
+d fillby: Fill missing values by group
+d 
+f f/fillby.ado
+f f/fillby.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N genlistvar.pkg
+D 24 Jul 2021
+U 24
+d gslab_stata: gslab_misc
+d 
+d Authors: Ernest Liu and Mike Thomas
+d 
+d genlistvar: Converts a variable to a variable that lists all its unique values at a specified by-group level
+d 
+f g/genlistvar.ado
+f g/genlistvar.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N insert_tag.pkg
+D 24 Jul 2021
+U 25
+d gslab_stata: gslab_misc
+d 
+d Author: Nick Tsivanidis
+d 
+d insert_tag: Insert HTML tags into logfile
+d 
+f i/insert_tag.ado
+f i/insert_tag.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N leaveout.pkg
+D 24 Jul 2021
+U 26
+d gslab_stata: gslab_misc
+d 
+d Author: Patrick DeJarnette and Jesse Shapiro
+d 
+d leaveout: Creates a variable that (for each observation) contains a weighted average excluding that observation
+d 
+f l/leaveout.ado
+f l/leaveout.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N load_and_append.pkg
+D 24 Jul 2021
+U 27
+d gslab_stata: gslab_misc
+d 
+d load_and_append: Appends a group of files and loads the appended file into memory.
+d 
+f l/load_and_append.ado
+f l/load_and_append.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N loadglob.pkg
+D 24 Jul 2021
+U 28
+d gslab_stata: gslab_misc
+d 
+d Author: Matthew Gentzkow
+d 
+d loadglob: Define global variables using an input file
+d 
+f l/loadglob.ado
+f l/loadglob.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N matrix_to_txt.pkg
+D 24 Jul 2021
+U 29
+d gslab_stata: gslab_misc
+d 
+d Authors: Michael Blasnik, Ben Jann, and Matthew Gentzkow
+d 
+d matrix_to_txt: Export a Stata matrix to a text file for use in other programs
+d 
+f m/matrix_to_txt.ado
+f m/matrix_to_txt.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N oo.pkg
+D 24 Jul 2021
+U 30
+d gslab_stata: gslab_misc
+d 
+d oo: Command to display a small comment
+d 
+f o/oo.ado
+f o/oo.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N ooo.pkg
+D 24 Jul 2021
+U 31
+d gslab_stata: gslab_misc
+d 
+d ooo: Command to display a big comment
+d 
+f o/ooo.ado
+f o/ooo.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N oooo.pkg
+D 24 Jul 2021
+U 32
+d gslab_stata: gslab_misc
+d 
+d oooo: Command to display a really big comment
+d 
+f o/oooo.ado
+f o/oooo.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N plotcoeffs_nolab.pkg
+D 24 Jul 2021
+U 33
+d gslab_stata: gslab_misc
+d 
+d plotcoeffs_nolab: Plot coefficients after a regression (no labels)
+d 
+f p/plotcoeffs_nolab.ado
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N plotcoeffs.pkg
+D 24 Jul 2021
+U 34
+d gslab_stata: gslab_misc
+d 
+d Authors: Matthew Gentzkow, Patrick DeJarnette, and James Mahon
+d 
+d plotcoeffs: Plot coefficients after a regression
+d 
+f p/plotcoeffs.ado
+f p/plotcoeffs.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N predict_list.pkg
+D 24 Jul 2021
+U 35
+d gslab_stata: gslab_misc
+d 
+d Author: Matthew Gentzkow
+d 
+d predict_list: Generate predicted values using a subset of right-hand-side variables
+d 
+f p/predict_list.ado
+f p/predict_list.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N preliminaries.pkg
+D 24 Jul 2021
+U 36
+d gslab_stata: gslab_misc
+d 
+d Author: CJ Verbeck
+d 
+d preliminaries: Command to set preliminaries for do files
+d 
+f p/preliminaries.ado
+f p/preliminaries.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N rankunique.pkg
+D 24 Jul 2021
+U 37
+d gslab_stata: gslab_misc
+d 
+d Author: Matthew Gentzkow
+d 
+d rankunique: Replacement for `egen ... = rank()`, unique that uses explicit randomization
+d 
+f r/rankunique.ado
+f r/rankunique.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N ren_lab_file.pkg
+D 24 Jul 2021
+U 38
+d gslab_stata: gslab_misc
+d 
+d Author: Matthew Gentzkow
+d 
+d ren_lab_file: Rename and relabel variables using a text file as input
+d 
+f r/ren_lab_file.ado
+f r/ren_lab_file.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N save_data.pkg
+D 24 Jul 2021
+U 39
+d gslab_stata: gslab_misc
+d 
+d save_data: Custom version of save command that requires the user to specify a key for the file
+d 
+f s/save_data.ado
+f s/save_data.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N select_observations.pkg
+D 24 Jul 2021
+U 40
+d gslab_stata: gslab_misc
+d 
+d select_observations: Keep observations from the dataset in memory that match a using dataset on specified variables
+d 
+f s/select_observations.ado
+f s/select_observations.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N sortunique.pkg
+D 24 Jul 2021
+U 41
+d gslab_stata
+d 
+d Author: Matthew Gentzkow
+d 
+d sortunique: Replacement for gsort that uses explicit randomization
+d 
+f s/sortunique.ado
+f s/sortunique.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N testbad.pkg
+D 24 Jul 2021
+U 42
+d gslab_stata: gslab_misc
+d 
+d testbad: Unit test utility which confirms that the command entered fails
+d 
+f t/testbad.ado
+f t/testbad.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N testgood.pkg
+D 24 Jul 2021
+U 43
+d gslab_stata: gslab_misc
+d 
+d testgood: Unit test utility which confirms that the command entered succeeds
+d 
+f t/testgood.ado
+f t/testgood.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/stata-misc/master
+N yaml.pkg
+D 24 Jul 2021
+U 44
+d Miscellaneous Stata Commands
+d 
+d Author: Sergio Correia, Duke University
+d Support: sergio.correia@duke.edu
+d 
+d yaml: Parse a very tiny subset of YAML
+d 
+d Distribution-Date: 20150521
+d 
+f y/yaml.ado
+f y/yaml.sthlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N testbad.pkg
+D 28 Oct 2021
+U 45
+d gslab_stata: gslab_misc
+d 
+d testbad: Unit test utility which confirms that the command entered fails
+d 
+f t/testbad.ado
+f t/testbad.hlp
+e
+S https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado
+N testgood.pkg
+D 28 Oct 2021
+U 46
+d gslab_stata: gslab_misc
+d 
+d testgood: Unit test utility which confirms that the command entered succeeds
+d 
+f t/testgood.ado
+f t/testgood.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N freduse.pkg
+D 15 Mar 2022
+U 47
+d 'FREDUSE': module to Import FRED (Federal Reserve Economic Database) data
+d 
+d  The FRED repository at https://research.stlouisfed.org/fred2/
+d contains over 3,000 U.S.  economic time series.  Each time series
+d is stored in a separate file that also contains a string-date
+d variable and header with information about the series.  freduse
+d imports a list of series into a single Stata dataset.
+d 
+d KW: data management
+d KW: macro data
+d KW: economic data
+d KW: FRED
+d 
+d Requires: Stata version 9.1
+d 
+d Distribution-Date: 20150708
+d 
+d Author: David M. Drukker, StataCorp LP
+d Support: email ddrukker@@stata.com
+d 
+f f/freduse.ado
+f f/freduse.hlp
+f _/_freduse.ado
+f _/_freduse2.ado
+f _/_fredweb.ado
+f l/lfreduse.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N palettes.pkg
+D  4 Oct 2023
+U 48
+d 'PALETTES': module to provide color palettes, symbol palettes, and line pattern palettes
+d 
+d  The palettes module contains three commands: colorpalette,
+d symbolpalette, and linepalette. The commands provide color,
+d symbol, and line pattern palettes for use in Stata graphs.
+d 
+d KW: graphics
+d KW: colors
+d KW: marker symbols
+d KW: line patterns
+d 
+d Requires: Stata version 14.2 and colrspace from SSC (q.v.); (version 9.2 for colorpalette9)
+d 
+d Distribution-Date: 20220421
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f p/palettes.hlp
+f c/colorpalette.ado
+f c/colorpalette.sthlp
+f c/colorpalette9.ado
+f c/colorpalette9.hlp
+f l/linepalette.ado
+f l/linepalette.hlp
+f s/symbolpalette.ado
+f s/symbolpalette.hlp
+f c/colorcheck.ado
+f c/colorcheck.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N colrspace.pkg
+D  4 Oct 2023
+U 49
+d 'COLRSPACE': module providing a class-based color management system in Mata
+d 
+d   The colrspace module provides a class-based color management
+d system implemented in Mata. It supports a wide variety of color
+d spaces and translations among them, provides color generators and
+d a large collection of named palettes, and features functionality
+d such as color interpolation, grayscale conversion, or color
+d vision deficiency simulation.
+d 
+d KW: graphics
+d KW: color management
+d 
+d Requires: Stata version 14.2
+d 
+d Distribution-Date: 20220421
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f c/colrspace.sthlp
+f c/colrspace_source.sthlp
+f c/colrspace_library_generators.sthlp
+f c/colrspace_library_namedcolors.sthlp
+f c/colrspace_library_palettes.sthlp
+f c/colrspace_library_lsmaps.sthlp
+f c/colrspace_library_rgbmaps.sthlp
+f l/lcolrspace.mlib
+e

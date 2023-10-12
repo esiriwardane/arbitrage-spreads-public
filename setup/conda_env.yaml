@@ -1,0 +1,17 @@
+name: arbitrage-spreads #CHANGE for your project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pyyaml # import python packages by naming them as dependencies and potentially specifying version numbers
+  - numpy
+  - matplotlib
+  - gitpython
+  - termcolor
+  - colorama
+  - jupyter
+  - future
+  - pip
+  - pandas
+  - scipy
+  - openpyxl

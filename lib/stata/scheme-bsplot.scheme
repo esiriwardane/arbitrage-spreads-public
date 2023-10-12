@@ -1,0 +1,23 @@
+#include s2color
+color background white
+color plotregion white
+color p1 "31 119 180"
+color p2 "255 127 14"
+color p3 "44 160 44"
+color p4 "214 39 40"
+color p5 "148 103 189"
+color p6 "140 86 75"
+color p7 "227 119 194"
+color p8 "127 127 127"
+color p9 "188 189 34"
+color p10 "23 190 207"
+color p11 "174 199 232"
+color p12 "255 187 120"
+color p13 "152 223 138"
+color p14 "255 152 150"
+color p15 "197 176 213"
+color p16 "196 156 148"
+color p17 "247 182 210"
+color p18 "199 199 199"
+color p19 "219 219 141"
+color p20 "158 218 229"
